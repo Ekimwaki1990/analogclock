@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(216, 217, 219, 0.905);
+}
+main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+#clock-frame {
+  box-shadow: 2px 2px 4px 4px rgb(56, 52, 52);
+  background-color: rgba(183, 111, 16, 0.089);
+  border: none;
+  width: 80vw;
+  height: 80vh;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-image: url(/assets/pexels-scott-webb-305821.jpg);
+}
+#sec-frame {
+  border: 2px solid rgba(218, 225, 238, 0.077);
+  border-radius: 50%;
+  display: flex;
+  width: 99%;
+  height: 99%;
+  align-items: center;
+  justify-content: center;
+}
+
+#num {
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 3px rgb(194, 187, 187);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 4vw;
+}
+#num .num {
+  --rotation: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+#num .num1 {
+  --rotation: 30deg;
+}
+#num .num2 {
+  --rotation: 60deg;
+}
+#num .num3 {
+  --rotation: 90deg;
+}
+#num .num4 {
+  --rotation: 120deg;
+}
+#num .num5 {
+  --rotation: 150deg;
+}
+#num .num6 {
+  --rotation: 180deg;
+}
+#num .num7 {
+  --rotation: 210deg;
+}
+#num .num8 {
+  --rotation: 240deg;
+}
+#num .num9 {
+  --rotation: 270deg;
+}
+#num .num10 {
+  --rotation: 300deg;
+}
+#num .num11 {
+  --rotation: 330deg;
+}
+#num .num12 {
+  --rotation: 360deg;
+}
+.hand {
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+
+  background-color: black;
+  transform-origin: bottom;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+#num .hand.sec {
+  width: 3px;
+  height: 48%;
+  background-color: red;
+}
+#num .hand.min {
+  width: 7px;
+  height: 45%;
+  background-color: rgb(44, 42, 42);
+}
+#num .hand.hour {
+  width: 10px;
+  height: 35%;
+  background-color: rgb(19, 157, 91);
+}
+#num::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  z-index: 111;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
